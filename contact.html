@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CONTACT — Riccardo Venturi</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Grotesk:wght@600;700&display=swap');
+
+    :root {
+      --red: #ff1a1a;
+      --pink: #ff0088;
+      --orange: #ff5500;
+      --yellow: #ffcc00;
+      --cyan: #00f0ff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0a0202;
+      color: white;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Header in linea con le altre pagine */
+    .identity { position: fixed; top: 25px; left: 25px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; }
+    .nav { position: fixed; top: 30px; right: 40px; display: flex; gap: 12px; }
+    button.nav-btn { padding: 12px 28px; border: none; font-weight: 700; text-transform: uppercase; cursor: pointer; background: #eee; }
+
+    /* Box Centrale stile Rothko per il Form */
+    .contact-frame {
+      width: 600px;
+      padding: 40px;
+      border: 6px solid var(--pink);
+      box-shadow: 0 0 0 15px var(--orange), 0 0 0 30px var(--yellow);
+      background: #000;
+      text-align: center;
+    }
+
+    h1 { font-family: 'Space Grotesk', sans-serif; font-size: 2.5rem; margin-bottom: 20px; color: var(--cyan); }
+
+    form { display: flex; flex-direction: column; gap: 15px; }
+
+    input, textarea {
+      padding: 15px;
+      background: #111;
+      border: 2px solid #333;
+      color: white;
+      font-family: 'Inter', sans-serif;
+      outline: none;
+    }
+
+    input:focus, textarea:focus { border-color: var(--cyan); }
+
+    .submit-btn {
+      padding: 15px;
+      background: var(--red);
+      color: white;
+      border: none;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .submit-btn:hover { background: var(--pink); transform: scale(1.02); }
+
+    #status {
+      margin-top: 15px;
+      padding: 10px;
+      display: none; /* Nascosto finché non serve */
+      font-weight: 700;
+    }
+
+    .success { color: var(--cyan); }
+    .error { color: var(--red); }
+  </style>
+</head>
+<body>
+
+  <div class="identity">RICCARDO VENTURI</div>
+  <div class="nav">
+    <a href="index.html"><button class="nav-btn">PORTFOLIO</button></a>
+  </div>
+
+  <div class="contact-frame">
+    <h1>GET IN TOUCH</h1>
+    
+    <form id="contact-form">
+      <input type="email" name="email" placeholder="YOUR EMAIL" required data-fs-field />
+      <textarea name="message" rows="5" placeholder="HOW CAN I HELP YOU?" required data-fs-field></textarea>
+      
+      <button type="submit" id="submit-btn" class="submit-btn" data-fs-submit-btn>SEND MESSAGE</button>
+      
+      <div id="status"></div>
+    </form>
+  </div>
+
+  <!-- Formspree Scripts -->
+  <script>
+    const form = document.getElementById("contact-form");
+    const status = document.getElementById("status");
+
+    async function handleSubmit(event) {
+      event.preventDefault();
+      const data = new FormData(event.target);
+      
+      fetch("https://formspree.io/f/xredgovb", {
+        method: "POST",
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          status.innerHTML = "MESSAGE SENT SUCCESSFULLY! ⚙️";
+          status.className = "success";
+          status.style.display = "block";
+          form.reset();
+        } else {
+          status.innerHTML = "OOPS! THERE WAS A PROBLEM.";
+          status.className = "error";
+          status.style.display = "block";
+        }
+      }).catch(error => {
+        status.innerHTML = "SERVER ERROR. TRY LATER.";
+        status.className = "error";
+        status.style.display = "block";
+      });
+    }
+    
+    form.addEventListener("submit", handleSubmit);
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROJECTS — Riccardo Venturi</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Grotesk:wght@600;700&display=swap');
+
+    :root {
+      --red: #ff1a1a; --deep: #8c0a0a; --pink: #ff0088;
+      --orange: #ff5500; --yellow: #ffcc00; --cyan: #00f0ff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0a0202; color: white;
+      padding-top: 120px; /* Spazio per la nav fissa */
+    }
+
+    /* NAV & IDENTITY (Copia identica degli altri) */
+    .identity { position: fixed; top: 25px; left: 25px; z-index: 1000; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; }
+    .nav { position: fixed; top: 30px; right: 40px; z-index: 1000; display: flex; gap: 12px; }
+    button.nav-btn { padding: 12px 28px; border: none; font-weight: 700; text-transform: uppercase; cursor: pointer; background: #eee; }
+    .btn-primary { background: var(--red); color: white; }
+
+    h1.page-title {
+      text-align: center; font-family: 'Space Grotesk'; font-size: 4rem;
+      margin-bottom: 60px; color: var(--yellow); text-transform: uppercase;
+    }
+
+    /* LA GRIGLIA PROGETTI */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+      gap: 50px;
+      padding: 0 8% 80px;
+    }
+
+    .project-card {
+      text-decoration: none; color: white;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover { transform: translateY(-10px); }
+
+    /* Box stile Rothko ridimensionato per la griglia */
+    .card-frame {
+      position: relative; width: 100%; aspect-ratio: 4/3;
+      border: 4px solid var(--pink);
+      box-shadow: 0 0 0 10px var(--orange), 0 0 0 20px var(--yellow);
+      background: #000; overflow: hidden;
+      margin-bottom: 40px; /* Spazio per il titolo sotto */
+    }
+
+    .card-frame img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: 0.3s; }
+    .project-card:hover img { opacity: 1; }
+
+    .project-info { text-align: left; padding: 10px 5px; }
+    .project-info h2 { font-family: 'Space Grotesk'; font-size: 1.8rem; color: var(--cyan); margin-bottom: 5px; }
+    .project-info p { font-size: 0.9rem; opacity: 0.7; letter-spacing: 1px; }
+
+  </style>
+</head>
+<body>
+
+  <div class="identity">RICCARDO VENTURI</div>
+  <div class="nav">
+    <a href="index.html"><button class="nav-btn">HOME</button></a>
+    <a href="contact.html"><button class="nav-btn">CONTACT</button></a>
+    <a href="assets/CV/CV_RV_FInal.pdf" download><button class="nav-btn btn-primary">DOWNLOAD CV</button></a>
+  </div>
+
+  <h1 class="page-title">Engineering Gallery</h1>
+
+  <div class="projects-grid">
+    
+    <!-- PROGETTO 1: CFL BULB -->
+    <a href="index.html" class="project-card">
+      <div class="card-frame">
+        <img src="assets/CFL RENDER 3D BLENDER.png">
+      </div>
+      <div class="project-info">
+        <h2>CFL BULB DESIGN</h2>
+        <p>ONSHAPE • BLENDER • PARAMETRIC HELIX</p>
+      </div>
+    </a>
+
+    <!-- PROGETTO 2: MANIFOLD ADAPTER (Copia questo blocco per altri) -->
+    <a href="Pagina_2_progetto_4.html" class="project-card">
+      <div class="card-frame">
+        <img src="assets/Progetto 4/Es 4 Riccardo Venturi mounting bracket.png">
+      </div>
+      <div class="project-info">
+        <h2>INDUSTRIAL ADAPTER</h2>
+        <p>SOLIDWORKS • CASTING • TOLERANCE ANALYSIS</p>
+      </div>
+    </a>
+
+    <!-- AGGIUNGI QUI IL PROGETTO 7, 5, ecc -->
+    <!-- PROGETTO 6 -->
+  <a href="Pagina_3_progetto_6.html" class="project-card">
+    <div class="card-frame">
+      <img src="assets/Progetti 6/6.1 b files.png">
+    </div>
+    <div class="project-info">
+      <h2>REINFORCED TRIANGULAR HUB</h2>
+      <p>Structural Linkage • Mirror Features</p>
+    </div>
+  </a>
+
+  <!-- PROGETTO 5 - Assembly -->
+  <a href="Pagina 4 - assembly 5.html" class="project-card">
+    <div class="card-frame">
+      <img src="assets/Progetto 5 assembly/assieme 5 RV 1.png">
+    </div>
+    <div class="project-info">
+      <h2>CASTER WHEEL SUB-ASSEMBLY</h2>
+      <p>Motion Study • Industrial Assembly</p>
+    </div>
+  </a>
+
+  <!-- PROGETTO 7 -->
+  <a href="Pagina 5 - progetto 7.html" class="project-card">
+    <div class="card-frame">
+      <img src="assets/Progetto 7/es 7 RV semi-cylindrical support bracket.png">
+    </div>
+    <div class="project-info">
+      <h2>SEMI-CYLINDRICAL BRACKET</h2>
+      <p>SolidWorks • Technical Drawing</p>
+    </div>
+  </a>
+  
+  <a href="Pagina 6 - progetto 2 e base assembly.html" class="project-card">
+    <div class="card-frame">
+      <img src="assets/Progetto Insieme Per albero-base/Pezzodi insieme SLD.png">
+    </div>
+    <div class="project-info">
+      <h2>FLANGED BEARING HOUSING</h2>
+      <p>Revolved Boss/Base • Bearing Housing • Rotational Geometry</p>
+    </div>
+  </a>
+  </div>
+
+</body>
+</html>

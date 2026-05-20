@@ -1,0 +1,140 @@
+/* ============================================================
+   STYLE-BASE.CSS — Riccardo Venturi Portfolio
+   Elementi comuni a tutte le pagine.
+   Importa questo file in ogni HTML come PRIMO link CSS.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Space+Grotesk:wght@600;700&display=swap');
+
+/* === RESET === */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0a0202;
+  color: white;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* === IDENTITY (nome in alto a sinistra) === */
+.identity {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px 14px;
+  border-radius: 5px;
+  line-height: 1.6;
+}
+
+.identity a {
+  display: block;
+  color: #00f0ff;
+  font-size: 0.7rem;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-top: 4px;
+  transition: opacity 0.2s;
+}
+
+.identity a:hover { opacity: 0.7; }
+
+/* === NAVIGAZIONE === */
+.nav {
+  position: fixed;
+  top: 30px;
+  right: 40px;
+  z-index: 1000;
+  display: flex;
+  gap: 12px;
+}
+
+/* === BOTTONI === */
+button {
+  padding: 12px 28px;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+/* bianco/grigio — per HOME, ABOUT, BACK, ALL PROJECTS */
+.btn-secondary {
+  background: #eee;
+  color: #111;
+}
+
+.btn-secondary:hover {
+  background: white;
+}
+
+/* rosso — per azioni principali: CONTACT, NEXT, DOWNLOAD CV */
+.btn-primary {
+  background: #ff1a1a;
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  background: #ff0088;
+}
+
+/* vetro — per LinkedIn e link esterni */
+.btn-glass {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* === FOOTER === */
+footer {
+  padding: 40px;
+  text-align: center;
+  background: #000;
+  border-top: 1px solid #3a0000;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+footer a { text-decoration: none; }
+
+/* === LIGHTBOX === */
+#lightbox {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.97);
+  z-index: 10000;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+}
+
+#lightbox img {
+  max-width: 94%;
+  max-height: 94%;
+  border: 8px solid #ffcc00;
+  box-shadow: 0 0 50px rgba(255, 204, 0, 0.3);
+}

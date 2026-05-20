@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <link rel="stylesheet" href="style-base.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ES 4 — Industrial Manifold Adapter</title>
+  <style>
+    :root { --red:#ff1a1a; --deep:#8c0a0a; --pink:#ff0088; --orange:#ff5500; --yellow:#ffcc00; --cyan:#00f0ff; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Inter',sans-serif; background:#0a0202; color:white; overflow-x:hidden; }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Space+Grotesk:wght@600;700&display=swap');
+    .hero-centered { min-height:100vh; display:flex; justify-content:center; align-items:center; padding:20px; background:linear-gradient(135deg,var(--deep) 0%,#1a0000 100%); position:relative; }
+    .concentric { position:relative; width:100vw; height:90vh; display:flex; max-width:1600px; justify-content:center; align-items:center; }
+    .border { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); border-style:solid; display:flex; align-items:center; justify-content:center; transition:all 0.3s ease; }
+    .border1 { width:100%; height:100%; border-color:var(--pink); border-width:14px; }
+    .border2 { width:96%; height:95%; border-color:var(--orange); border-width:11px; }
+    .border3 { width:92%; height:90%; border-color:var(--yellow); border-width:9px; background:#000; overflow:hidden; }
+    .project-img { width:100%; height:100%; object-fit:cover; cursor:zoom-in; }
+    .blueprint-section { display:grid; grid-template-columns:1fr 2fr; gap:60px; padding:100px 10%; background:#000; align-items:center; }
+    .blueprint-text h2 { font-size:2.8rem; color:var(--yellow); margin-bottom:1.5rem; font-family:'Space Grotesk',sans-serif; line-height:1.1; }
+    .blueprint-text p { font-size:1.1rem; line-height:1.7; opacity:0.8; margin-bottom:20px; }
+    .blueprint-tags { color:var(--cyan); font-weight:700; letter-spacing:2px; text-transform:uppercase; font-size:0.85rem; border-left:4px solid var(--cyan); padding-left:15px; }
+    .drawing-frame { border:8px solid var(--cyan); box-shadow:0 0 50px rgba(0,240,255,0.1); background:#111; padding:15px; line-height:0; }
+    #lightbox { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.98); z-index:10000; align-items:center; justify-content:center; cursor:zoom-out; }
+  </style>
+</head>
+<body>
+
+  <div class="identity">
+    RICCARDO VENTURI<br>
+    <span style="font-size:0.8rem;opacity:0.6;font-weight:400;">CAGLIARI, ITALY</span>
+    <a href="https://www.linkedin.com/in/riccardo-venturi-1937573b1" target="_blank">LINKEDIN ↗</a>
+  </div>
+
+  <div class="nav">
+  <a href="index.html"><button class="btn-secondary">HOME</button></a>
+  <a href="contact.html"><button class="btn-secondary">CONTACT</button></a>
+  <a href="assets/CV/CV_RV_FInal.pdf" download><button class="btn-primary">DOWNLOAD CV</button></a>
+  </div>
+
+  <section class="hero-centered">
+    <div class="concentric">
+      <div class="border border1"></div>
+      <div class="border border2"></div>
+      <div class="border border3">
+        <img src="assets/Progetto 4/Es 4 Riccardo Venturi mounting bracket.png" class="project-img" onclick="openLightbox(this.src)" alt="3D Render">
+      </div>
+    </div>
+  </section>
+
+  <section class="blueprint-section">
+    <div class="blueprint-text">
+      <h2>INDUSTRIAL MANIFOLD ADAPTER</h2>
+      <p>Modellazione di un corpo complesso con piani inclinati. Ottimizzazione dei fori di fissaggio con tolleranze strette per accoppiamenti meccanici di precisione. Studio della rigidezza torsionale attraverso nervature integrate.</p>
+      <div class="blueprint-tags">SolidWorks • Angled Planes • Mechanical Casting</div>
+    </div>
+    <div class="drawing-frame">
+      <img src="assets/Progetto 4/Es 4 Riccardo Venturi mounting bracket draw.png" style="width:100%;cursor:zoom-in;" onclick="openLightbox(this.src)" alt="Drawing">
+    </div>
+  </section>
+
+  <div id="lightbox" onclick="this.style.display='none'">
+    <img id="lightbox-img" style="max-width:94%;max-height:94%;border:8px solid var(--cyan);">
+  </div>
+  <script>function openLightbox(src){document.getElementById('lightbox-img').src=src;document.getElementById('lightbox').style.display='flex';}</script>
+
+</body>
+<footer>
+  <a href="index.html"><button class="btn-secondary">← PREVIOUS</button></a>
+  <a href="projects.html"><button class="btn-secondary">ALL PROJECTS</button></a>
+  <a href="Pagina_3_progetto_6.html"><button class="btn-primary">NEXT →</button></a>
+</footer>
+</html>
