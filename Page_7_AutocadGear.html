@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <link rel="stylesheet" href="style-base.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoCAD 2D-3D — Gear </title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Space+Grotesk:wght@600;700&display=swap');
+    
+    /* AutoCAD Color Scheme Overrides (Localized) */
+    :root { 
+      --cad-blue: #0066cc; 
+      --cad-cyan: #00f0ff; 
+      --cad-dark: #13181d; /* Matches AutoCAD model space background */
+      --cad-white: #ffffff;
+    }
+    
+    * { margin:0; padding:0; box-sizing:border-box; }
+    
+    body { 
+      font-family:'Inter',sans-serif; 
+      background: var(--cad-dark) !important; 
+      color: var(--cad-white) !important; 
+      overflow-x:hidden; 
+    }
+
+    /* Force Nav and Buttons on this page to use AutoCAD Theme */
+    .nav .btn-primary, footer .btn-primary {
+      background: var(--cad-blue) !important;
+      color: var(--cad-white) !important;
+    }
+    .nav .btn-primary:hover, footer .btn-primary:hover {
+      background: #0052a3 !important;
+    }
+
+    /* Hero Layout styling with CAD Colors */
+    .hero-centered { 
+      min-height:100vh; 
+      display:flex; 
+      justify-content:center; 
+      align-items:center; 
+      padding:20px; 
+      background: linear-gradient(135deg, #0e1216 0%, var(--cad-dark) 100%) !important; 
+      position:relative; 
+    }
+    .concentric { position:relative; width:100vw; height:90vh; display:flex; max-width:1600px; justify-content:center; align-items:center; }
+    .border { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); border-style:solid; display:flex; align-items:center; justify-content:center; transition:all 0.3s ease; }
+    
+    /* AutoCAD Blue/White/Cyan Concentric Framing */
+    .border1 { width:100%; height:100%; border-color: var(--cad-white) !important; border-width:14px; }
+    .border2 { width:96%; height:95%; border-color: var(--cad-blue) !important; border-width:11px; }
+    .border3 { width:92%; height:90%; border-color: var(--cad-cyan) !important; border-width:9px; background: #000; overflow:hidden; }
+    
+    .project-img { width:100%; height:100%; object-fit:cover; cursor:zoom-in; }
+    
+    /* Description layout */
+    .blueprint-section { display:grid; grid-template-columns:1fr 2fr; gap:60px; padding:100px 10%; background:#090b0d; align-items:center; }
+    .blueprint-text h2 { font-size:2.8rem; color: var(--cad-cyan) !important; margin-bottom:1.5rem; font-family:'Space Grotesk',sans-serif; line-height:1.1; }
+    .blueprint-text p { font-size:1.1rem; line-height:1.7; opacity:0.8; margin-bottom:20px; }
+    .blueprint-tags { color: var(--cad-cyan) !important; font-weight:700; letter-spacing:2px; text-transform:uppercase; font-size:0.85rem; border-left:4px solid var(--cad-blue); padding-left:15px; }
+    
+    .drawing-frame { border:8px solid var(--cad-blue) !important; box-shadow:0 0 50px rgba(0,102,204,0.1); background:#0e1216; padding:15px; line-height:0; }
+    
+    /* Footer section inside this specific page */
+    .section-footer { padding:100px 10%; background:#0e1216 !important; display:grid; grid-template-columns:1fr 1fr; gap:100px; align-items:center; }
+    
+    #lightbox { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.98); z-index:10000; align-items:center; justify-content:center; cursor:zoom-out; }
+  </style>
+</head>
+<body>
+
+  <div class="identity">
+    RICCARDO VENTURI<br>
+    <span style="font-size:0.8rem;opacity:0.6;font-weight:400;">CAGLIARI, ITALY</span>
+    <a href="https://www.linkedin.com/in/riccardo-venturi-1937573b1" target="_blank" style="color: var(--cad-cyan) !important;">LINKEDIN ↗</a>
+  </div>
+
+  <div class="nav">
+    <a href="index.html"><button class="btn-secondary">HOME</button></a>
+    <a href="contact.html"><button class="btn-secondary">CONTACT</button></a>
+    <a href="assets/CV/CV_RV_FInal.pdf" download><button class="btn-primary">DOWNLOAD CV</button></a>
+  </div>
+
+  <!-- HERO SECTION: 3D Wireframe Image -->
+  <section class="hero-centered">
+    <div class="concentric">
+      <div class="border border1"></div>
+      <div class="border border2"></div>
+      <div class="border border3">
+        <!-- Replace this path with your actual 3D Wireframe screenshot file path -->
+        <img src="assets/Page_7_Autocad/Gear-Venturi-CAD2D.png" class="project-img" onclick="openLightbox(this.src)" alt="AutoCAD 3D Wireframe">
+      </div>
+    </div>
+  </section>
+
+  <!-- BLUEPRINT SECTION: 2D Drawing Image -->
+  <section class="blueprint-section">
+    <div class="blueprint-text">
+      <h2>GEAR DECAL</h2>
+      <p>Modellazione 3D con Autocad 2D, in wireframe ed elaborazione del relativo disegno tecnico bidimensionale quotato. Layout strutturato con cartiglio e indicazioni dimensionali precise per la produzione del componente meccanico.</p>
+      <div class="blueprint-tags">AUTOCAD • 3D WIREFRAME • 2D DRAWING • SCALE 1:1</div>
+    </div>
+    <div class="drawing-frame">
+      <!-- Replace this path with your actual 2D Technical drawing screenshot file path -->
+      <img src="assets/Page_7_Autocad/Gear2DQuotedCartiglioVenturi.png" style="width:100%;cursor:zoom-in;" onclick="openLightbox(this.src)" alt="AutoCAD 2D Drawing">
+    </div>
+  </section>
+
+  <!-- LIGHTBOX FOR IMAGE ZOOM -->
+  <div id="lightbox" onclick="this.style.display='none'">
+    <img id="lightbox-img" style="max-width:94%;max-height:94%;border:8px solid var(--cad-cyan);">
+  </div>
+  
+  <script>
+    function openLightbox(src){
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').style.display = 'flex';
+    }
+  </script>
+
+</body>
+<footer>
+  <!--a href="Pagina 5 - progetto 7.html"><button class="btn-secondary">← PREVIOUS</button></a-->
+  <!--a href="Pagina 5 - progetto 7.html"><button class="btn-secondary"> NEXT OF CAD SERIES</button></a-->
+  <a href="projects.html"><button class="btn-secondary">ALL PROJECTS</button></a>
+  <!-- Update link to target next pages as you create them -->
+  <a href="index.html"><button class="btn-primary" style="""> BACK TO START ←</button></a>
+</footer>
+</html>
