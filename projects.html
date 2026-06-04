@@ -60,7 +60,11 @@
     .project-info { text-align: left; padding: 10px 5px; }
     .project-info h2 { font-family: 'Space Grotesk'; font-size: 1.8rem; color: var(--cyan); margin-bottom: 5px; }
     .project-info p { font-size: 0.9rem; opacity: 0.7; letter-spacing: 1px; }
-
+    /* Special CAD Card Styling (Concentric borders in White, Blue, Cyan) */
+    .card-frame.cad-theme {
+      border: 4px solid #ffffff !important;
+      box-shadow: 0 0 0 10px #0066cc, 0 0 0 20px #00f0ff !important;
+    }
   </style>
 </head>
 <body>
@@ -69,13 +73,13 @@
   <div class="nav">
     <a href="index.html"><button class="nav-btn">HOME</button></a>
     <a href="contact.html"><button class="nav-btn">CONTACT</button></a>
-    <a href="assets/CV/CV_RV_FInal.pdf" download><button class="nav-btn btn-primary">DOWNLOAD CV</button></a>
+    <a href="assets/CV_Riccardo_Venturi.pdf" download><button class="nav-btn btn-primary">DOWNLOAD CV</button></a>
   </div>
 
   <h1 class="page-title">Engineering Gallery</h1>
 
   <div class="projects-grid">
-    
+    <!-- NUOVO PROGETTO: AUTOCAD GEAR DECAL -->
     <!-- PROGETTO 1: CFL BULB -->
     <a href="index.html" class="project-card">
       <div class="card-frame">
@@ -141,6 +145,16 @@
       <p>Revolved Boss/Base • Bearing Housing • Rotational Geometry</p>
     </div>
   </a>
+  <a href="Page_7_AutocadGear.html" class="project-card">
+      <div class="card-frame cad-theme">
+        <!-- Path to the image you want to preview in the gallery grid -->
+        <img src="assets/Page_7_Autocad/Gear-Venturi-CAD2D.png" alt="AutoCAD Gear Project">
+      </div>
+      <div class="project-info">
+        <h2 style="color: #00f0ff !important;">GEAR DECAL</h2>
+        <p style="color: #ffffff !important; opacity: 0.8;">AUTOCAD • 3D WIREFRAME • 2D DRAWING</p>
+      </div>
+    </a>
   </div>
 
 </body>
